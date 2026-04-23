@@ -29,7 +29,7 @@
         <a-input
           v-model.trim="outbound.tag"
           @change="outModal.check()"
-          placeholder='{{ i18n "pages.xray.outbound.tagDesc" }}'
+          placeholder='{{ i18n "pages.xray.outbound.tagDesc" }}' aria-label='{{ i18n "pages.xray.outbound.tagDesc" }}'
         ></a-input>
       </a-form-item>
       <a-form-item label='{{ i18n "pages.xray.outbound.sendThrough" }}'>
@@ -58,13 +58,13 @@
             :style="{ width: '100%' }"
             :dropdown-class-name="themeSwitcher.currentTheme"
             :token-separators="[',']"
-            placeholder="IP/CIDR/geoip:*/ext:*"
+            placeholder="IP/CIDR/geoip:*/ext:*" aria-label="IP/CIDR/geoip:*/ext:*"
           >
           </a-select>
         </a-form-item>
         <a-form-item label="Fragment">
           <a-switch
-            :checked="Object.keys(outbound.settings.fragment).length >0"
+            :checked="Object.keys(outbound.settings.fragment).length  aria-label='{{ i18n "status" }}'>0"
             @change="checked => outbound.settings.fragment = checked ? new Outbound.FreedomSettings.Fragment() : {}"
           >
           </a-switch>
@@ -98,7 +98,7 @@
         <!-- Switch for Noises -->
         <a-form-item label="Noises">
           <a-switch
-            :checked="outbound.settings.noises.length > 0"
+            :checked="outbound.settings.noises.length  aria-label='{{ i18n "status" }}'> 0"
             @change="checked => outbound.settings.noises = checked ? [new Outbound.FreedomSettings.Noise()] : []"
           >
           </a-switch>
@@ -108,7 +108,7 @@
         <template v-if="outbound.settings.noises.length > 0">
           <a-form-item label="Noises">
             <a-button
-              icon="plus"
+              icon="plus" aria-label='{{ i18n "create" }}'
               type="primary"
               size="small"
               @click="outbound.settings.addNoise()"
@@ -266,7 +266,7 @@
           ></a-input-number>
         </a-form-item>
         <a-form-item label="No Kernel Tun">
-          <a-switch v-model="outbound.settings.noKernelTun"></a-switch>
+          <a-switch v-model="outbound.settings.noKernelTun" aria-label='{{ i18n "status" }}'></a-switch>
         </a-form-item>
         <a-form-item>
           <template slot="label">
@@ -281,7 +281,7 @@
         </a-form-item>
         <a-form-item label="Peers">
           <a-button
-            icon="plus"
+            icon="plus" aria-label='{{ i18n "create" }}'
             type="primary"
             size="small"
             @click="outbound.settings.addPeer()"
@@ -315,7 +315,7 @@
             <template slot="label">
               {{ i18n "pages.xray.wireguard.allowedIPs" }}
               <a-button
-                icon="plus"
+                icon="plus" aria-label='{{ i18n "create" }}'
                 type="primary"
                 size="small"
                 @click="peer.allowedIPs.push('')"
@@ -410,7 +410,7 @@
               :min="0"
               :max="10"
               :style="{ width: '100%' }"
-              placeholder="0"
+              placeholder="0" aria-label="0"
             ></a-input-number>
           </a-form-item>
           <a-form-item label="Vision Seed">
@@ -421,7 +421,7 @@
                   :min="0"
                   :max="9999"
                   :style="{ width: '100%' }"
-                  placeholder="900"
+                  placeholder="900" aria-label="900"
                   addon-before="[0]"
                 ></a-input-number>
               </a-col>
@@ -431,7 +431,7 @@
                   :min="0"
                   :max="9999"
                   :style="{ width: '100%' }"
-                  placeholder="500"
+                  placeholder="500" aria-label="500"
                   addon-before="[1]"
                 ></a-input-number>
               </a-col>
@@ -441,7 +441,7 @@
                   :min="0"
                   :max="9999"
                   :style="{ width: '100%' }"
-                  placeholder="900"
+                  placeholder="900" aria-label="900"
                   addon-before="[2]"
                 ></a-input-number>
               </a-col>
@@ -451,7 +451,7 @@
                   :min="0"
                   :max="9999"
                   :style="{ width: '100%' }"
-                  placeholder="256"
+                  placeholder="256" aria-label="256"
                   addon-before="[3]"
                 ></a-input-number>
               </a-col>
@@ -496,7 +496,7 @@
             </a-select>
           </a-form-item>
           <a-form-item label="UDP over TCP">
-            <a-switch v-model="outbound.settings.uot"></a-switch>
+            <a-switch v-model="outbound.settings.uot" aria-label='{{ i18n "status" }}'></a-switch>
           </a-form-item>
           <a-form-item label="UoTVersion">
             <a-input-number
@@ -545,7 +545,7 @@
           <a-form-item label='HTTP {{ i18n "camouflage" }}'>
             <a-switch
               :checked="outbound.stream.tcp.type === 'http'"
-              @change="checked => outbound.stream.tcp.type = checked ? 'http' : 'none'"
+              @change="checked = aria-label='{{ i18n "status" }}'> outbound.stream.tcp.type = checked ? 'http' : 'none'"
             ></a-switch>
           </a-form-item>
           <template v-if="outbound.stream.tcp.type == 'http'">
@@ -623,7 +623,7 @@
             <a-input v-model.trim="outbound.stream.grpc.authority"></a-input>
           </a-form-item>
           <a-form-item label="Multi Mode">
-            <a-switch v-model="outbound.stream.grpc.multiMode"></a-switch>
+            <a-switch v-model="outbound.stream.grpc.multiMode" aria-label='{{ i18n "status" }}'></a-switch>
           </a-form-item>
         </template>
 
@@ -659,7 +659,7 @@
             label="No gRPC Header"
             v-if="outbound.stream.xhttp.mode === 'stream-up' || outbound.stream.xhttp.mode === 'stream-one'"
           >
-            <a-switch v-model="outbound.stream.xhttp.noGRPCHeader"></a-switch>
+            <a-switch v-model="outbound.stream.xhttp.noGRPCHeader" aria-label='{{ i18n "status" }}'></a-switch>
           </a-form-item>
           <a-form-item
             label="Min Upload Interval (Ms)"
@@ -724,19 +724,19 @@
           <a-form-item label="Upload Speed">
             <a-input
               v-model.trim="outbound.stream.hysteria.up"
-              placeholder="0 (BBR mode), e.g., 100 mbps"
+              placeholder="0 (BBR mode), e.g., 100 mbps" aria-label="0 (BBR mode), e.g., 100 mbps"
             ></a-input>
           </a-form-item>
           <a-form-item label="Download Speed">
             <a-input
               v-model.trim="outbound.stream.hysteria.down"
-              placeholder="0 (BBR mode), e.g., 100 mbps"
+              placeholder="0 (BBR mode), e.g., 100 mbps" aria-label="0 (BBR mode), e.g., 100 mbps"
             ></a-input>
           </a-form-item>
           <a-form-item label="UDP Hop Port">
             <a-input
               v-model.trim="outbound.stream.hysteria.udphopPort"
-              placeholder="e.g., 1145-1919 or 11,13,15-17"
+              placeholder="e.g., 1145-1919 or 11,13,15-17" aria-label="e.g., 1145-1919 or 11,13,15-17"
             ></a-input>
           </a-form-item>
           <a-form-item
@@ -794,7 +794,7 @@
           <a-form-item label="Disable Path MTU">
             <a-switch
               v-model="outbound.stream.hysteria.disablePathMTUDiscovery"
-            ></a-switch>
+             aria-label='{{ i18n "status" }}'></a-switch>
           </a-form-item>
         </template>
       </template>
@@ -806,7 +806,7 @@
           v-if="outbound.stream.network === 'kcp' || outbound.protocol === Protocols.Hysteria"
         >
           <a-button
-            icon="plus"
+            icon="plus" aria-label='{{ i18n "create" }}'
             type="primary"
             size="small"
             @click="outbound.stream.addUdpMask(outbound.protocol === Protocols.Hysteria ? 'salamander' : 'mkcp-aes128gcm')"
@@ -883,13 +883,13 @@
             >
               <a-input
                 v-model.trim="mask.settings.password"
-                placeholder="Obfuscation password"
+                placeholder="Obfuscation password" aria-label="Obfuscation password"
               ></a-input>
             </a-form-item>
             <a-form-item label="Domain" v-if="mask.type === 'header-dns'">
               <a-input
                 v-model.trim="mask.settings.domain"
-                placeholder="e.g., www.example.com"
+                placeholder="e.g., www.example.com" aria-label="e.g., www.example.com"
               ></a-input>
             </a-form-item>
             <template v-if="mask.type === 'xdns'">
@@ -899,7 +899,7 @@
                   v-model="mask.settings.resolvers"
                   :style="{ width: '100%' }"
                   :token-separators="[',']"
-                  placeholder="e.g., xxx+udp://8.8.8.8:53"
+                  placeholder="e.g., xxx+udp://8.8.8.8:53" aria-label="e.g., xxx+udp://8.8.8.8:53"
                 ></a-select>
               </a-form-item>
             </template>
@@ -930,7 +930,7 @@
                 <a-form-item label="Rand Range">
                   <a-input
                     v-model.trim="c.randRange"
-                    placeholder="0-255"
+                    placeholder="0-255" aria-label="0-255"
                   ></a-input>
                 </a-form-item>
                 <a-form-item label="Type">
@@ -945,7 +945,7 @@
                   </a-select>
                 </a-form-item>
                 <a-form-item label="Packet">
-                  <a-input v-model.trim="c.packet" placeholder="binary data" />
+                  <a-input v-model.trim="c.packet" placeholder="binary data" aria-label="binary data" />
                 </a-form-item>
               </template>
               <a-divider :style="{ margin: '0' }"></a-divider>
@@ -975,7 +975,7 @@
                 <a-form-item label="Rand Range">
                   <a-input
                     v-model.trim="s.randRange"
-                    placeholder="0-255"
+                    placeholder="0-255" aria-label="0-255"
                   ></a-input>
                 </a-form-item>
                 <a-form-item label="Type">
@@ -990,7 +990,7 @@
                   </a-select>
                 </a-form-item>
                 <a-form-item label="Packet">
-                  <a-input v-model.trim="s.packet" placeholder="binary data" />
+                  <a-input v-model.trim="s.packet" placeholder="binary data" aria-label="binary data" />
                 </a-form-item>
               </template>
             </template>
@@ -998,19 +998,19 @@
               <a-form-item label="ASCII">
                 <a-input
                   v-model.trim="mask.settings.ascii"
-                  placeholder="ASCII"
+                  placeholder="ASCII" aria-label="ASCII"
                 ></a-input>
               </a-form-item>
               <a-form-item label="Custom Table">
                 <a-input
                   v-model.trim="mask.settings.customTable"
-                  placeholder="Custom Table"
+                  placeholder="Custom Table" aria-label="Custom Table"
                 ></a-input>
               </a-form-item>
               <a-form-item label="Custom Tables">
                 <a-input
                   v-model.trim="mask.settings.customTables"
-                  placeholder="Custom Tables"
+                  placeholder="Custom Tables" aria-label="Custom Tables"
                 ></a-input>
               </a-form-item>
               <a-form-item label="Padding Min">
@@ -1050,7 +1050,7 @@
                 <a-form-item label="Rand Range">
                   <a-input
                     v-model.trim="n.randRange"
-                    placeholder="0-255"
+                    placeholder="0-255" aria-label="0-255"
                   ></a-input>
                 </a-form-item>
                 <a-form-item label="Type">
@@ -1065,10 +1065,10 @@
                   </a-select>
                 </a-form-item>
                 <a-form-item label="Packet">
-                  <a-input v-model.trim="n.packet" placeholder="binary data" />
+                  <a-input v-model.trim="n.packet" placeholder="binary data" aria-label="binary data" />
                 </a-form-item>
                 <a-form-item label="Delay">
-                  <a-input v-model.trim="n.delay" placeholder="10-20" />
+                  <a-input v-model.trim="n.delay" placeholder="10-20" aria-label="10-20" />
                 </a-form-item>
               </template>
             </template>
@@ -1076,7 +1076,7 @@
               <a-form-item label="IP">
                 <a-input
                   v-model.trim="mask.settings.ip"
-                  placeholder="0.0.0.0"
+                  placeholder="0.0.0.0" aria-label="0.0.0.0"
                 ></a-input>
               </a-form-item>
               <a-form-item label="ID">
@@ -1136,13 +1136,13 @@
           <a-form-item label="verify Peer Cert By Name">
             <a-input
               v-model.trim="outbound.stream.tls.verifyPeerCertByName"
-              placeholder="cloudflare-dns.com"
+              placeholder="cloudflare-dns.com" aria-label="cloudflare-dns.com"
             ></a-input>
           </a-form-item>
           <a-form-item label=" pinned Peer Cert Sha256">
             <a-input
               v-model.trim="outbound.stream.tls.pinnedPeerCertSha256"
-              placeholder="Enter SHA256 fingerprints (base64)"
+              placeholder="Enter SHA256 fingerprints (base64)" aria-label="Enter SHA256 fingerprints (base64)"
             >
             </a-input>
           </a-form-item>
@@ -1186,7 +1186,7 @@
 
       <!-- sockopt settings -->
       <a-form-item label="Sockopts">
-        <a-switch v-model="outbound.stream.sockoptSwitch"></a-switch>
+        <a-switch v-model="outbound.stream.sockoptSwitch" aria-label='{{ i18n "status" }}'></a-switch>
       </a-form-item>
       <template v-if="outbound.stream.sockoptSwitch">
         <a-form-item label="Dialer Proxy">
@@ -1216,13 +1216,13 @@
           ></a-input-number>
         </a-form-item>
         <a-form-item label="TCP Fast Open">
-          <a-switch v-model="outbound.stream.sockopt.tcpFastOpen"></a-switch>
+          <a-switch v-model="outbound.stream.sockopt.tcpFastOpen" aria-label='{{ i18n "status" }}'></a-switch>
         </a-form-item>
         <a-form-item label="Multipath TCP">
-          <a-switch v-model.trim="outbound.stream.sockopt.tcpMptcp"></a-switch>
+          <a-switch v-model.trim="outbound.stream.sockopt.tcpMptcp" aria-label='{{ i18n "status" }}'></a-switch>
         </a-form-item>
         <a-form-item label="Penetrate">
-          <a-switch v-model="outbound.stream.sockopt.penetrate"></a-switch>
+          <a-switch v-model="outbound.stream.sockopt.penetrate" aria-label='{{ i18n "status" }}'></a-switch>
         </a-form-item>
         <a-form-item label="Trusted X-Forwarded-For">
           <a-select
@@ -1246,7 +1246,7 @@
       <!-- mux settings -->
       <template v-if="outbound.canEnableMux()">
         <a-form-item label="Mux">
-          <a-switch v-model="outbound.mux.enabled"></a-switch>
+          <a-switch v-model="outbound.mux.enabled" aria-label='{{ i18n "status" }}'></a-switch>
         </a-form-item>
         <template v-if="outbound.mux.enabled">
           <a-form-item label="Concurrency">
@@ -1284,7 +1284,7 @@
       <a-input
         addon-before='{{ i18n "pages.xray.outbound.link" }}'
         v-model.trim="outModal.link"
-        placeholder="vmess:// vless:// trojan:// ss:// hysteria2://"
+        placeholder="vmess:// vless:// trojan:// ss:// hysteria2://" aria-label="vmess:// vless:// trojan:// ss:// hysteria2://"
       >
         <a-icon slot="addonAfter" type="form" @click="convertLink"></a-icon>
       </a-input>

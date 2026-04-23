@@ -15,7 +15,7 @@
         </a-col>
         <a-col :xs="12" :sm="12" :lg="12" :style="{ textAlign: 'right' }">
             <a-button-group>
-                <a-button icon="sync" @click="refreshOutboundTraffic()"
+                <a-button icon="sync" aria-label='{{ i18n "info" }}' @click="refreshOutboundTraffic()"
                     :loading="refreshing"></a-button>
                 <a-popconfirm placement="topRight"
                     @confirm="resetOutboundTraffic(-1)"
@@ -25,7 +25,7 @@
                     cancel-text='{{ i18n "cancel"}}'>
                     <a-icon slot="icon" type="question-circle-o"
                         :style="{ color: themeSwitcher.isDarkTheme ? '#008771' : '#008771' }"></a-icon>
-                    <a-button icon="retweet"></a-button>
+                    <a-button icon="retweet" aria-label='{{ i18n "reset" }}'></a-button>
                 </a-popconfirm>
             </a-button-group>
         </a-col>
@@ -94,11 +94,10 @@
                 <a-button
                     type="primary"
                     shape="circle"
-                    icon="thunderbolt"
+                    icon="thunderbolt" aria-label='{{ i18n "info" }}'
                     :loading="outboundTestStates[index] && outboundTestStates[index].testing"
                     @click="testOutbound(index)"
-                    :disabled="(outbound.protocol === 'blackhole' || outbound.tag === 'blocked') || (outboundTestStates[index] && outboundTestStates[index].testing)">
-                </a-button>
+                    :disabled="(outbound.protocol === 'blackhole' || outbound.tag === 'blocked') || (outboundTestStates[index] && outboundTestStates[index].testing)"></a-button>
             </a-tooltip>
         </template>
         <template slot="testResult" slot-scope="text, outbound, index">

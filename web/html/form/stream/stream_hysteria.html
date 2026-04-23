@@ -11,7 +11,7 @@
     ></a-input-number>
   </a-form-item>
   <a-form-item label="Masquerade">
-    <a-switch v-model="inbound.stream.hysteria.masqueradeSwitch"></a-switch>
+    <a-switch v-model="inbound.stream.hysteria.masqueradeSwitch" aria-label='{{ i18n "status" }}'></a-switch>
   </a-form-item>
   <template v-if="inbound.stream.hysteria.masqueradeSwitch">
     <a-divider :style="{ margin: '5px 0 0' }">Masquerade</a-divider>
@@ -40,12 +40,12 @@
       <a-form-item label="Rewrite Host">
         <a-switch
           v-model="inbound.stream.hysteria.masquerade.rewriteHost"
-        ></a-switch>
+         aria-label='{{ i18n "status" }}'></a-switch>
       </a-form-item>
       <a-form-item label="Insecure">
         <a-switch
           v-model="inbound.stream.hysteria.masquerade.insecure"
-        ></a-switch>
+         aria-label='{{ i18n "status" }}'></a-switch>
       </a-form-item>
     </template>
     <template v-if="inbound.stream.hysteria.masquerade.type === 'string'">
@@ -69,7 +69,7 @@
           <a-input
             style="width: 50%"
             v-model.trim="header.name"
-            placeholder='{{ i18n "pages.inbounds.stream.general.name"}}'
+            placeholder='{{ i18n "pages.inbounds.stream.general.name"}}' aria-label='{{ i18n "pages.inbounds.stream.general.name"}}'
           >
             <template slot="addonBefore" style="margin: 0"
               >[[ index+1 ]]</template
@@ -78,7 +78,7 @@
           <a-input
             style="width: 50%"
             v-model.trim="header.value"
-            placeholder='{{ i18n "pages.inbounds.stream.general.value" }}'
+            placeholder='{{ i18n "pages.inbounds.stream.general.value" }}' aria-label='{{ i18n "pages.inbounds.stream.general.value" }}'
           >
             <a-button
               slot="addonAfter"

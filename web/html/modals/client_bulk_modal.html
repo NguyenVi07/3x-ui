@@ -69,7 +69,7 @@
                     Subscription
                     <a-icon
                         @click="clientsBulkModal.subId = RandomUtil.randomLowerAndNum(16)"
-                        type="sync"></a-icon>
+                        type="sync" role="button" tabindex="0" aria-label='{{ i18n "update" }}'></a-icon>
                 </a-tooltip>
             </template>
             <a-input v-model.trim="clientsBulkModal.subId"></a-input>
@@ -115,7 +115,7 @@
         </a-form-item>
         <a-form-item label='{{ i18n "pages.client.delayedStart" }}'>
             <a-switch v-model="clientsBulkModal.delayedStart"
-                @click="clientsBulkModal.expiryTime=0"></a-switch>
+                @click="clientsBulkModal.expiryTime=0" aria-label='{{ i18n "status" }}'></a-switch>
         </a-form-item>
         <a-form-item label='{{ i18n "pages.client.expireDays" }}'
             v-if="clientsBulkModal.delayedStart">

@@ -366,15 +366,15 @@
             <a-space size="small">
               <a-tooltip :overlay-class-name="themeSwitcher.currentTheme">
                 <template slot="title">{{ i18n "pages.index.customGeoEdit" }}</template>
-                <a-button type="link" size="small" icon="edit" @click="openCustomGeoModal(record)"></a-button>
+                <a-button type="link" size="small" icon="edit" aria-label='{{ i18n "edit" }}' @click="openCustomGeoModal(record)"></a-button>
               </a-tooltip>
               <a-tooltip :overlay-class-name="themeSwitcher.currentTheme">
                 <template slot="title">{{ i18n "pages.index.customGeoDownload" }}</template>
-                <a-button type="link" size="small" icon="reload" @click="downloadCustomGeo(record.id)" :loading="customGeoActionId === record.id"></a-button>
+                <a-button type="link" size="small" icon="reload" aria-label='{{ i18n "update" }}' @click="downloadCustomGeo(record.id)" :loading="customGeoActionId === record.id"></a-button>
               </a-tooltip>
               <a-tooltip :overlay-class-name="themeSwitcher.currentTheme">
                 <template slot="title">{{ i18n "pages.index.customGeoDelete" }}</template>
-                <a-button type="link" size="small" icon="delete" @click="confirmDeleteCustomGeo(record)"></a-button>
+                <a-button type="link" size="small" icon="delete" aria-label='{{ i18n "delete" }}' @click="confirmDeleteCustomGeo(record)"></a-button>
               </a-tooltip>
             </a-space>
           </template>
@@ -394,10 +394,10 @@
         </a-select>
       </a-form-item>
       <a-form-item label='{{ i18n "pages.index.customGeoAlias" }}'>
-        <a-input v-model.trim="customGeoModal.form.alias" :disabled="!!customGeoModal.editId" placeholder='{{ i18n "pages.index.customGeoAliasPlaceholder" }}'></a-input>
+        <a-input v-model.trim="customGeoModal.form.alias" :disabled="!!customGeoModal.editId" placeholder='{{ i18n "pages.index.customGeoAliasPlaceholder" }}' aria-label='{{ i18n "pages.index.customGeoAliasPlaceholder" }}'></a-input>
       </a-form-item>
       <a-form-item label='{{ i18n "pages.index.customGeoUrl" }}'>
-        <a-input v-model.trim="customGeoModal.form.url" placeholder="https://"></a-input>
+        <a-input v-model.trim="customGeoModal.form.url" placeholder="https://" aria-label="https://"></a-input>
       </a-form-item>
     </a-form>
   </a-modal>
@@ -434,7 +434,7 @@
         <a-checkbox v-model="logModal.syslog" @change="openLogs()">SysLog</a-checkbox>
       </a-form-item>
       <a-form-item style="float: right;">
-        <a-button type="primary" icon="download" @click="FileManager.downloadTextFile(logModal.logs?.join('\n'), 'x-ui.log')"></a-button>
+        <a-button type="primary" icon="download" aria-label='{{ i18n "download" }}' @click="FileManager.downloadTextFile(logModal.logs?.join('\n'), 'x-ui.log')"></a-button>
       </a-form-item>
     </a-form>
     <div class="ant-input log-container" v-html="logModal.formattedLogs"></div>
@@ -469,7 +469,7 @@
         <a-checkbox v-model="xraylogModal.showProxy" @change="openXrayLogs()">Proxy</a-checkbox>
       </a-form-item>
       <a-form-item style="float: right;">
-        <a-button type="primary" icon="download" @click="downloadXrayLogs"></a-button>
+        <a-button type="primary" icon="download" aria-label='{{ i18n "download" }}' @click="downloadXrayLogs"></a-button>
       </a-form-item>
     </a-form>
     <div class="ant-input log-container" v-html="xraylogModal.formattedLogs"></div>

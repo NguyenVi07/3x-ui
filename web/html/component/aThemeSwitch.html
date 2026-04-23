@@ -9,7 +9,7 @@
       <a-menu-item id="change-theme" class="ant-menu-theme-switch" @mousedown="themeSwitcher.animationsOff()">
         <span>{{ i18n "menu.dark" }}</span>
         <a-switch :style="{ marginLeft: '2px' }" size="small" :default-checked="themeSwitcher.isDarkTheme"
-          @change="themeSwitcher.toggleTheme()"></a-switch>
+          @change="themeSwitcher.toggleTheme()" aria-label='{{ i18n "status" }}'></a-switch>
       </a-menu-item>
       <a-menu-item id="change-theme-ultra" v-if="themeSwitcher.isDarkTheme" class="ant-menu-theme-switch"
         @mousedown="themeSwitcher.animationsOffUltra()">
@@ -26,7 +26,7 @@
 <template>
   <a-space @mousedown="themeSwitcher.animationsOff()" id="change-theme" direction="vertical" :size="10" :style="{ width: '100%' }">
     <a-space direction="horizontal" size="small">
-      <a-switch size="small" :default-checked="themeSwitcher.isDarkTheme" @change="themeSwitcher.toggleTheme()"></a-switch>
+      <a-switch size="small" :default-checked="themeSwitcher.isDarkTheme" @change="themeSwitcher.toggleTheme()" aria-label='{{ i18n "status" }}'></a-switch>
       <span>{{ i18n "menu.dark" }}</span>
     </a-space>
     <a-space v-if="themeSwitcher.isDarkTheme" direction="horizontal" size="small">

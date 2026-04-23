@@ -6,9 +6,9 @@
 >
   <a-divider :style="{ margin: '5px 0 0' }"></a-divider>
   <a-form-item label="External Proxy">
-    <a-switch v-model="externalProxy"></a-switch>
+    <a-switch v-model="externalProxy" aria-label='{{ i18n "status" }}'></a-switch>
     <a-button
-      icon="plus"
+      icon="plus" aria-label='{{ i18n "create" }}'
       v-if="externalProxy"
       type="primary"
       :style="{ marginLeft: '10px' }"
@@ -39,7 +39,7 @@
     <a-input
       :style="{ width: '30%' }"
       v-model.trim="row.dest"
-      placeholder='{{ i18n "host" }}'
+      placeholder='{{ i18n "host" }}' aria-label='{{ i18n "host" }}'
     ></a-input>
     <a-tooltip title='{{ i18n "pages.inbounds.port" }}'>
       <a-input-number
@@ -52,11 +52,11 @@
     <a-input
       :style="{ width: '30%', top: '0' }"
       v-model.trim="row.remark"
-      placeholder='{{ i18n "remark" }}'
+      placeholder='{{ i18n "remark" }}' aria-label='{{ i18n "remark" }}'
     >
       <template slot="addonAfter">
         <a-button
-          icon="minus"
+          icon="minus" aria-label='{{ i18n "delete" }}'
           size="small"
           @click="inbound.stream.externalProxy.splice(index, 1)"
         ></a-button>

@@ -12,7 +12,7 @@
   </a-form-item>
   <a-form-item label='{{ i18n "pages.inbounds.stream.tcp.requestHeader" }}'>
     <a-button
-      icon="plus"
+      icon="plus" aria-label='{{ i18n "create" }}'
       size="small"
       @click="inbound.stream.xhttp.addHeader('', '')"
     ></a-button>
@@ -25,7 +25,7 @@
       <a-input
         :style="{ width: '50%' }"
         v-model.trim="header.name"
-        placeholder='{{ i18n "pages.inbounds.stream.general.name"}}'
+        placeholder='{{ i18n "pages.inbounds.stream.general.name"}}' aria-label='{{ i18n "pages.inbounds.stream.general.name"}}'
       >
         <template slot="addonBefore" :style="{ margin: '0' }"
           >[[ index+1 ]]</template
@@ -34,10 +34,10 @@
       <a-input
         :style="{ width: '50%' }"
         v-model.trim="header.value"
-        placeholder='{{ i18n "pages.inbounds.stream.general.value" }}'
+        placeholder='{{ i18n "pages.inbounds.stream.general.value" }}' aria-label='{{ i18n "pages.inbounds.stream.general.value" }}'
       >
         <a-button
-          icon="minus"
+          icon="minus" aria-label='{{ i18n "delete" }}'
           slot="addonAfter"
           size="small"
           @click="inbound.stream.xhttp.removeHeader(index)"
@@ -80,19 +80,19 @@
     <a-input v-model.trim="inbound.stream.xhttp.xPaddingBytes"></a-input>
   </a-form-item>
   <a-form-item label="Padding Obfs Mode">
-    <a-switch v-model="inbound.stream.xhttp.xPaddingObfsMode"></a-switch>
+    <a-switch v-model="inbound.stream.xhttp.xPaddingObfsMode" aria-label='{{ i18n "status" }}'></a-switch>
   </a-form-item>
   <template v-if="inbound.stream.xhttp.xPaddingObfsMode">
     <a-form-item label="Padding Key">
       <a-input
         v-model.trim="inbound.stream.xhttp.xPaddingKey"
-        placeholder="x_padding"
+        placeholder="x_padding" aria-label="x_padding"
       ></a-input>
     </a-form-item>
     <a-form-item label="Padding Header">
       <a-input
         v-model.trim="inbound.stream.xhttp.xPaddingHeader"
-        placeholder="X-Padding"
+        placeholder="X-Padding" aria-label="X-Padding"
       ></a-input>
     </a-form-item>
     <a-form-item label="Padding Placement">
@@ -147,7 +147,7 @@
   >
     <a-input
       v-model.trim="inbound.stream.xhttp.sessionKey"
-      placeholder="x_session"
+      placeholder="x_session" aria-label="x_session"
     ></a-input>
   </a-form-item>
   <a-form-item label="Sequence Placement">
@@ -168,7 +168,7 @@
   >
     <a-input
       v-model.trim="inbound.stream.xhttp.seqKey"
-      placeholder="x_seq"
+      placeholder="x_seq" aria-label="x_seq"
     ></a-input>
   </a-form-item>
   <a-form-item
@@ -192,7 +192,7 @@
   >
     <a-input
       v-model.trim="inbound.stream.xhttp.uplinkDataKey"
-      placeholder="x_data"
+      placeholder="x_data" aria-label="x_data"
     ></a-input>
   </a-form-item>
   <a-form-item
@@ -202,11 +202,11 @@
     <a-input-number
       v-model.number="inbound.stream.xhttp.uplinkChunkSize"
       :min="0"
-      placeholder="0 (unlimited)"
+      placeholder="0 (unlimited)" aria-label="0 (unlimited)"
     ></a-input-number>
   </a-form-item>
   <a-form-item label="No SSE Header">
-    <a-switch v-model="inbound.stream.xhttp.noSSEHeader"></a-switch>
+    <a-switch v-model="inbound.stream.xhttp.noSSEHeader" aria-label='{{ i18n "status" }}'></a-switch>
   </a-form-item>
 </a-form>
 {{end}}

@@ -5,7 +5,7 @@
             <template #title>{{ i18n "pages.xray.dns.enable" }}</template>
             <template #description>{{ i18n "pages.xray.dns.enableDesc" }}</template>
             <template #control>
-                <a-switch v-model="enableDNS"></a-switch>
+                <a-switch v-model="enableDNS" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <template v-if="enableDNS">
@@ -39,28 +39,28 @@
                 <template #title>{{ i18n "pages.xray.dns.disableCache" }}</template>
                 <template #description>{{ i18n "pages.xray.dns.disableCacheDesc" }}</template>
                 <template #control>
-                    <a-switch v-model="dnsDisableCache"></a-switch>
+                    <a-switch v-model="dnsDisableCache" aria-label='{{ i18n "status" }}'></a-switch>
                 </template>
             </a-setting-list-item>
             <a-setting-list-item paddings="small">
                 <template #title>{{ i18n "pages.xray.dns.disableFallback" }}</template>
                 <template #description>{{ i18n "pages.xray.dns.disableFallbackDesc" }}</template>
                 <template #control>
-                    <a-switch v-model="dnsDisableFallback"></a-switch>
+                    <a-switch v-model="dnsDisableFallback" aria-label='{{ i18n "status" }}'></a-switch>
                 </template>
             </a-setting-list-item>
             <a-setting-list-item paddings="small">
                 <template #title>{{ i18n "pages.xray.dns.disableFallbackIfMatch" }}</template>
                 <template #description>{{ i18n "pages.xray.dns.disableFallbackIfMatchDesc" }}</template>
                 <template #control>
-                    <a-switch v-model="dnsDisableFallbackIfMatch"></a-switch>
+                    <a-switch v-model="dnsDisableFallbackIfMatch" aria-label='{{ i18n "status" }}'></a-switch>
                 </template>
             </a-setting-list-item>
             <a-setting-list-item paddings="small">
                 <template #title>{{ i18n "pages.xray.dns.enableParallelQuery" }}</template>
                 <template #description>{{ i18n "pages.xray.dns.enableParallelQueryDesc" }}</template>
                 <template #control>
-                    <a-switch v-model="dnsEnableParallelQuery"></a-switch>
+                    <a-switch v-model="dnsEnableParallelQuery" aria-label='{{ i18n "status" }}'></a-switch>
                 </template>
             </a-setting-list-item>
 
@@ -68,7 +68,7 @@
                 <template #title>{{ i18n "pages.xray.dns.useSystemHosts" }}</template>
                 <template #description>{{ i18n "pages.xray.dns.useSystemHostsDesc" }}</template>
                 <template #control>
-                    <a-switch v-model="dnsUseSystemHosts"></a-switch>
+                    <a-switch v-model="dnsUseSystemHosts" aria-label='{{ i18n "status" }}'></a-switch>
                 </template>
             </a-setting-list-item>
         </template>
@@ -121,7 +121,7 @@
                         <a-button type="primary" icon="plus" @click="addDNSServer()">
                             <span>{{ i18n "pages.xray.dns.add" }}</span>
                         </a-button>
-                        <a-button type="primary" icon="menu" @click="openDNSPresets()"></a-button>
+                        <a-button type="primary" icon="menu" aria-label='{{ i18n "menu.settings" }}' @click="openDNSPresets()"></a-button>
                     </a-button-group>
                 </a-empty>
             </template>

@@ -113,14 +113,14 @@
             <template #title>{{ i18n "pages.settings.externalTrafficInformEnable"}}</template>
             <template #description>{{ i18n "pages.settings.externalTrafficInformEnableDesc"}}</template>
             <template #control>
-                <a-switch v-model="allSetting.externalTrafficInformEnable"></a-switch>
+                <a-switch v-model="allSetting.externalTrafficInformEnable" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
             <template #title>{{ i18n "pages.settings.externalTrafficInformURI"}}</template>
             <template #description>{{ i18n "pages.settings.externalTrafficInformURIDesc"}}</template>
             <template #control>
-                <a-input type="text" placeholder="(http|https)://domain[:port]/path/"
+                <a-input type="text" placeholder="(http|https)://domain[:port]/path/" aria-label="(http|https)://domain[:port]/path/"
                     v-model="allSetting.externalTrafficInformURI"></a-input>
             </template>
         </a-setting-list-item>
@@ -150,7 +150,7 @@
         <a-setting-list-item paddings="small">
             <template #title>Enable LDAP sync</template>
             <template #control>
-                <a-switch v-model="allSetting.ldapEnable"></a-switch>
+                <a-switch v-model="allSetting.ldapEnable" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -168,7 +168,7 @@
         <a-setting-list-item paddings="small">
             <template #title>Use TLS (LDAPS)</template>
             <template #control>
-                <a-switch v-model="allSetting.ldapUseTLS"></a-switch>
+                <a-switch v-model="allSetting.ldapUseTLS" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -225,7 +225,7 @@
             <template #title>Invert flag</template>
             <template #description>Enable when attribute means disabled (e.g., shadowInactive)</template>
             <template #control>
-                <a-switch v-model="allSetting.ldapInvertFlag"></a-switch>
+                <a-switch v-model="allSetting.ldapInvertFlag" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -248,13 +248,13 @@
         <a-setting-list-item paddings="small">
             <template #title>Auto create clients</template>
             <template #control>
-                <a-switch v-model="allSetting.ldapAutoCreate"></a-switch>
+                <a-switch v-model="allSetting.ldapAutoCreate" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
             <template #title>Auto delete clients</template>
             <template #control>
-                <a-switch v-model="allSetting.ldapAutoDelete"></a-switch>
+                <a-switch v-model="allSetting.ldapAutoDelete" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">

@@ -51,7 +51,7 @@
     <template v-if="inbound.isTcp && !inbound.settings.selectedAuth">
       <a-form :colon="false" :label-col="{ md: {span:8} }" :wrapper-col="{ md: {span:14} }">
         <a-form-item label="Fallbacks">
-          <a-button icon="plus" type="primary" size="small" @click="inbound.settings.addFallback()"></a-button>
+          <a-button icon="plus" aria-label='{{ i18n "create" }}' type="primary" size="small" @click="inbound.settings.addFallback()"></a-button>
         </a-form-item>
       </a-form>
 

@@ -7,7 +7,7 @@
   :wrapper-col="{ md: {span:14} }"
 >
   <a-form-item label='{{ i18n "pages.inbounds.enable" }}'>
-    <a-switch v-model="client.enable"></a-switch>
+    <a-switch v-model="client.enable" aria-label='{{ i18n "status" }}'></a-switch>
   </a-form-item>
   <a-form-item>
     <template slot="label">
@@ -36,12 +36,12 @@
         <a-icon
           v-if="inbound.protocol === Protocols.SHADOWSOCKS"
           @click="client.password = RandomUtil.randomShadowsocksPassword(inbound.settings.method)"
-          type="sync"
+          type="sync" role="button" tabindex="0" aria-label='{{ i18n "update" }}'
         ></a-icon>
         <a-icon
           v-if="inbound.protocol === Protocols.TROJAN"
           @click="client.password = RandomUtil.randomSeq(10)"
-          type="sync"
+          type="sync" role="button" tabindex="0" aria-label='{{ i18n "update" }}'
         >
         </a-icon>
       </a-tooltip>
@@ -57,7 +57,7 @@
         Auth Password
         <a-icon
           @click="client.auth = RandomUtil.randomSeq(10)"
-          type="sync"
+          type="sync" role="button" tabindex="0" aria-label='{{ i18n "update" }}'
         ></a-icon>
       </a-tooltip>
     </template>
@@ -74,7 +74,7 @@
         ID
         <a-icon
           @click="client.id = RandomUtil.randomUUID()"
-          type="sync"
+          type="sync" role="button" tabindex="0" aria-label='{{ i18n "update" }}'
         ></a-icon>
       </a-tooltip>
     </template>
@@ -102,7 +102,7 @@
         Subscription
         <a-icon
           @click="client.subId = RandomUtil.randomLowerAndNum(16)"
-          type="sync"
+          type="sync" role="button" tabindex="0" aria-label='{{ i18n "update" }}'
         ></a-icon>
       </a-tooltip>
     </template>
@@ -164,7 +164,7 @@
         id="clientIPs"
         readonly
         @click="getDBClientIps(client.email)"
-        placeholder="Click To Get IPs"
+        placeholder="Click To Get IPs" aria-label="Click To Get IPs"
         :auto-size="{ minRows: 5, maxRows: 10 }"
       >
       </a-textarea>
@@ -209,7 +209,7 @@
     </a-tooltip>
   </a-form-item>
   <a-form-item label='{{ i18n "pages.client.delayedStart" }}'>
-    <a-switch v-model="delayedStart" @click="client._expiryTime=0"></a-switch>
+    <a-switch v-model="delayedStart" @click="client._expiryTime=0" aria-label='{{ i18n "status" }}'></a-switch>
   </a-form-item>
   <a-form-item v-if="delayedStart" label='{{ i18n "pages.client.expireDays" }}'>
     <a-input-number

@@ -14,7 +14,7 @@
         <a-icon type="question-circle"></a-icon>
       </a-tooltip>
     </template>
-    <a-input v-model.trim="inbound.settings.name" placeholder="xray0"></a-input>
+    <a-input v-model.trim="inbound.settings.name" placeholder="xray0" aria-label="xray0"></a-input>
   </a-form-item>
   <a-form-item>
     <template slot="label">
@@ -30,7 +30,7 @@
       v-model.number="inbound.settings.mtu[0]"
       :min="1"
       :max="9000"
-      placeholder="1500"
+      placeholder="1500" aria-label="1500"
     ></a-input-number>
   </a-form-item>
   <a-form-item label="MTU IPv6">
@@ -38,7 +38,7 @@
       v-model.number="inbound.settings.mtu[1]"
       :min="1"
       :max="9000"
-      placeholder="1280"
+      placeholder="1280" aria-label="1280"
     ></a-input-number>
   </a-form-item>
   <a-form-item label="Gateway">
@@ -47,7 +47,7 @@
       v-model="inbound.settings.gateway"
       :style="{ width: '100%' }"
       :token-separators="[',']"
-      placeholder="IPv4/IPv6 gateway"
+      placeholder="IPv4/IPv6 gateway" aria-label="IPv4/IPv6 gateway"
     ></a-select>
   </a-form-item>
   <a-form-item label="DNS">
@@ -56,7 +56,7 @@
       v-model="inbound.settings.dns"
       :style="{ width: '100%' }"
       :token-separators="[',']"
-      placeholder="DNS servers"
+      placeholder="DNS servers" aria-label="DNS servers"
     ></a-select>
   </a-form-item>
   <a-form-item>
@@ -72,7 +72,7 @@
     <a-input-number
       v-model.number="inbound.settings.userLevel"
       :min="0"
-      placeholder="0"
+      placeholder="0" aria-label="0"
     ></a-input-number>
   </a-form-item>
   <a-form-item label="Auto Routing Table">
@@ -81,13 +81,13 @@
       v-model="inbound.settings.autoSystemRoutingTable"
       :style="{ width: '100%' }"
       :token-separators="[',']"
-      placeholder="e.g. vpn, proxy"
+      placeholder="e.g. vpn, proxy" aria-label="e.g. vpn, proxy"
     ></a-select>
   </a-form-item>
   <a-form-item label="Auto Outbounds">
     <a-input
       v-model.trim="inbound.settings.autoOutboundsInterface"
-      placeholder="auto"
+      placeholder="auto" aria-label="auto"
     ></a-input>
   </a-form-item>
 </a-form>

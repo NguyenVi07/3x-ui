@@ -14,7 +14,7 @@
         <a-icon type="question-circle"></a-icon>
       </a-tooltip>
     </span>
-    <a-switch v-model="inbound.sniffing.enabled"></a-switch>
+    <a-switch v-model="inbound.sniffing.enabled" aria-label='{{ i18n "status" }}'></a-switch>
   </a-form-item>
   <template v-if="inbound.sniffing.enabled">
     <a-form-item :wrapper-col="{span:24}">
@@ -25,10 +25,10 @@
       </a-checkbox-group>
     </a-form-item>
     <a-form-item label="Metadata Only">
-      <a-switch v-model="inbound.sniffing.metadataOnly"></a-switch>
+      <a-switch v-model="inbound.sniffing.metadataOnly" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="Route Only">
-      <a-switch v-model="inbound.sniffing.routeOnly"></a-switch>
+      <a-switch v-model="inbound.sniffing.routeOnly" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="IPs Excluded">
       <a-select
@@ -36,7 +36,7 @@
         v-model="inbound.sniffing.ipsExcluded"
         :style="{ width: '100%' }"
         :token-separators="[',']"
-        placeholder="IP/CIDR/geoip:*/ext:*"
+        placeholder="IP/CIDR/geoip:*/ext:*" aria-label="IP/CIDR/geoip:*/ext:*"
       ></a-select>
     </a-form-item>
     <a-form-item label="Domains Excluded">
@@ -45,7 +45,7 @@
         v-model="inbound.sniffing.domainsExcluded"
         :style="{ width: '100%' }"
         :token-separators="[',']"
-        placeholder="domain:*/ext:*"
+        placeholder="domain:*/ext:*" aria-label="domain:*/ext:*"
       ></a-select>
     </a-form-item>
   </template>

@@ -10,7 +10,7 @@
             <template v-for="(row, index) in qrModal.qrcodes">
               <b>[[ row.remark ]]</b>
               <a-space direction="horizontal">
-                <a-switch size="small" :checked="row.useIPv4" @click="toggleIPv4(index)"></a-switch>
+                <a-switch size="small" :checked="row.useIPv4" @click="toggleIPv4(index)" aria-label='{{ i18n "status" }}'></a-switch>
                 <span>{{ i18n "useIPv4ForHost" }}</span>
               </a-space>
             </template>

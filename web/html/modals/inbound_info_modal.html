@@ -101,7 +101,7 @@
         inbound.settings.encryption ? inbound.settings.encryption : ''
         ]]</a-tag>
       <a-tooltip title='{{ i18n "copy" }}'>
-        <a-button size="small" icon="snippets" @click="copy(inbound.settings.encryption)"></a-button>
+        <a-button size="small" icon="snippets" aria-label='{{ i18n "copy" }}' @click="copy(inbound.settings.encryption)"></a-button>
       </a-tooltip>
       <br />
       <template v-if="inbound.stream.security != 'none'">
@@ -324,7 +324,7 @@
           <tr-info-title class="tr-info-title">
             <a-tag color="purple">Subscription Link</a-tag>
             <a-tooltip title='{{ i18n "copy" }}'>
-              <a-button size="small" icon="snippets" @click="copy(infoModal.subLink)"></a-button>
+              <a-button size="small" icon="snippets" aria-label='{{ i18n "copy" }}' @click="copy(infoModal.subLink)"></a-button>
             </a-tooltip>
           </tr-info-title>
           <a :href="[[ infoModal.subLink ]]" target="_blank">[[
@@ -334,7 +334,7 @@
           <tr-info-title class="tr-info-title">
             <a-tag color="purple">Json Link</a-tag>
             <a-tooltip title='{{ i18n "copy" }}'>
-              <a-button size="small" icon="snippets" @click="copy(infoModal.subJsonLink)"></a-button>
+              <a-button size="small" icon="snippets" aria-label='{{ i18n "copy" }}' @click="copy(infoModal.subJsonLink)"></a-button>
             </a-tooltip>
           </tr-info-title>
           <a :href="[[ infoModal.subJsonLink ]]" target="_blank">[[
@@ -347,7 +347,7 @@
           <tr-info-title class="tr-info-title">
             <a-tag color="blue">[[ infoModal.clientSettings.tgId ]]</a-tag>
             <a-tooltip title='{{ i18n "copy" }}'>
-              <a-button size="small" icon="snippets" @click="copy(infoModal.clientSettings.tgId)"></a-button>
+              <a-button size="small" icon="snippets" aria-label='{{ i18n "copy" }}' @click="copy(infoModal.clientSettings.tgId)"></a-button>
             </a-tooltip>
           </tr-info-title>
         </tr-info-row>
@@ -359,7 +359,7 @@
             <a-tag class="tr-info-tag" color="green">[[ link.remark
               ]]</a-tag>
             <a-tooltip title='{{ i18n "copy" }}'>
-              <a-button :style="{ minWidth: '24px' }" size="small" icon="snippets" @click="copy(link.link)"></a-button>
+              <a-button :style="{ minWidth: '24px' }" size="small" icon="snippets" aria-label='{{ i18n "copy" }}' @click="copy(link.link)"></a-button>
             </a-tooltip>
           </tr-info-title>
           <code>[[ link.link ]]</code>
@@ -374,7 +374,7 @@
             <a-tag class="tr-info-tag" color="green">[[ link.remark
               ]]</a-tag>
             <a-tooltip title='{{ i18n "copy" }}'>
-              <a-button :style="{ minWidth: '24px' }" size="small" icon="snippets" @click="copy(link.link)"></a-button>
+              <a-button :style="{ minWidth: '24px' }" size="small" icon="snippets" aria-label='{{ i18n "copy" }}' @click="copy(link.link)"></a-button>
             </a-tooltip>
           </tr-info-title>
           <code>[[ link.link ]]</code>
@@ -502,11 +502,11 @@
                 <tr-info-title class="tr-info-title">
                   <a-tag color="blue">Config</a-tag>
                   <a-tooltip title='{{ i18n "copy" }}'>
-                    <a-button :style="{ minWidth: '24px' }" size="small" icon="snippets"
+                    <a-button :style="{ minWidth: '24px' }" size="small" icon="snippets" aria-label='{{ i18n "copy" }}'
                       @click="copy(infoModal.links[index])"></a-button>
                   </a-tooltip>
                   <a-tooltip title='{{ i18n "download" }}'>
-                    <a-button :style="{ minWidth: '24px' }" size="small" icon="download"
+                    <a-button :style="{ minWidth: '24px' }" size="small" icon="download" aria-label='{{ i18n "download" }}'
                       @click="FileManager.downloadTextFile(infoModal.links[index], `peer-${index + 1}.conf`)"></a-button>
                   </a-tooltip>
                 </tr-info-title>

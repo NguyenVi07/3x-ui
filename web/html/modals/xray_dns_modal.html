@@ -18,41 +18,41 @@
     </a-form-item>
     <a-divider :style="{ margin: '5px 0' }"></a-divider>
     <a-form-item label='{{ i18n "pages.xray.dns.domains" }}'>
-      <a-button icon="plus" size="small" type="primary" @click="dnsModal.dnsServer.domains.push('')"></a-button>
+      <a-button icon="plus" aria-label='{{ i18n "create" }}' size="small" type="primary" @click="dnsModal.dnsServer.domains.push('')"></a-button>
       <template v-for="(domain, index) in dnsModal.dnsServer.domains">
         <a-input v-model.trim="dnsModal.dnsServer.domains[index]">
-          <a-button icon="minus" size="small" slot="addonAfter"
+          <a-button icon="minus" aria-label='{{ i18n "delete" }}' size="small" slot="addonAfter"
             @click="dnsModal.dnsServer.domains.splice(index,1)"></a-button>
         </a-input>
       </template>
     </a-form-item>
     <a-form-item label='{{ i18n "pages.xray.dns.expectIPs"}}'>
-      <a-button icon="plus" size="small" type="primary" @click="dnsModal.dnsServer.expectIPs.push('')"></a-button>
+      <a-button icon="plus" aria-label='{{ i18n "create" }}' size="small" type="primary" @click="dnsModal.dnsServer.expectIPs.push('')"></a-button>
       <template v-for="(domain, index) in dnsModal.dnsServer.expectIPs">
         <a-input v-model.trim="dnsModal.dnsServer.expectIPs[index]">
-          <a-button icon="minus" size="small" slot="addonAfter"
+          <a-button icon="minus" aria-label='{{ i18n "delete" }}' size="small" slot="addonAfter"
             @click="dnsModal.dnsServer.expectIPs.splice(index,1)"></a-button>
         </a-input>
       </template>
     </a-form-item>
     <a-form-item label='{{ i18n "pages.xray.dns.unexpectIPs"}}'>
-      <a-button icon="plus" size="small" type="primary" @click="dnsModal.dnsServer.unexpectedIPs.push('')"></a-button>
+      <a-button icon="plus" aria-label='{{ i18n "create" }}' size="small" type="primary" @click="dnsModal.dnsServer.unexpectedIPs.push('')"></a-button>
       <template v-for="(domain, index) in dnsModal.dnsServer.unexpectedIPs">
         <a-input v-model.trim="dnsModal.dnsServer.unexpectedIPs[index]">
-          <a-button icon="minus" size="small" slot="addonAfter"
+          <a-button icon="minus" aria-label='{{ i18n "delete" }}' size="small" slot="addonAfter"
             @click="dnsModal.dnsServer.unexpectedIPs.splice(index,1)"></a-button>
         </a-input>
       </template>
     </a-form-item>
     <a-divider :style="{ margin: '5px 0' }"></a-divider>
     <a-form-item label='Skip Fallback'>
-      <a-switch v-model="dnsModal.dnsServer.skipFallback"></a-switch>
+      <a-switch v-model="dnsModal.dnsServer.skipFallback" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label='Disable Cache'>
-      <a-switch v-model="dnsModal.dnsServer.disableCache"></a-switch>
+      <a-switch v-model="dnsModal.dnsServer.disableCache" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label='Final Query'>
-      <a-switch v-model="dnsModal.dnsServer.finalQuery"></a-switch>
+      <a-switch v-model="dnsModal.dnsServer.finalQuery" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
   </a-form>
 </a-modal>

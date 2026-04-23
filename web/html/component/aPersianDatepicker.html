@@ -3,7 +3,7 @@
     <div>
         <a-input :value="value" type="text" v-model="date" data-jdp class="persian-datepicker"
             @input="$emit('input', convertToGregorian($event.target.value)); jalaliDatepicker.hide();"
-            :placeholder="placeholder">
+            :placeholder="placeholder" :aria-label="placeholder">
             <template #addonAfter>
                 <a-icon type="calendar" :style="{ fontSize: '14px', opacity: '0.5' }" />
             </template>

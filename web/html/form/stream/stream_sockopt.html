@@ -6,7 +6,7 @@
   :wrapper-col="{ md: {span:14} }"
 >
   <a-form-item label="Sockopt">
-    <a-switch v-model="inbound.stream.sockoptSwitch"></a-switch>
+    <a-switch v-model="inbound.stream.sockoptSwitch" aria-label='{{ i18n "status" }}'></a-switch>
   </a-form-item>
   <template v-if="inbound.stream.sockoptSwitch">
     <a-form-item label="Route Mark">
@@ -46,19 +46,19 @@
       ></a-input-number>
     </a-form-item>
     <a-form-item label="Proxy Protocol">
-      <a-switch v-model="inbound.stream.sockopt.acceptProxyProtocol"></a-switch>
+      <a-switch v-model="inbound.stream.sockopt.acceptProxyProtocol" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="TCP Fast Open">
-      <a-switch v-model.trim="inbound.stream.sockopt.tcpFastOpen"></a-switch>
+      <a-switch v-model.trim="inbound.stream.sockopt.tcpFastOpen" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="Multipath TCP">
-      <a-switch v-model.trim="inbound.stream.sockopt.tcpMptcp"></a-switch>
+      <a-switch v-model.trim="inbound.stream.sockopt.tcpMptcp" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="Penetrate">
-      <a-switch v-model.trim="inbound.stream.sockopt.penetrate"></a-switch>
+      <a-switch v-model.trim="inbound.stream.sockopt.penetrate" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="V6 Only">
-      <a-switch v-model.trim="inbound.stream.sockopt.V6Only"></a-switch>
+      <a-switch v-model.trim="inbound.stream.sockopt.V6Only" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="Domain Strategy">
       <a-select

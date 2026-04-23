@@ -11,10 +11,10 @@
     </a-form-item>
     <a-form-item :wrapper-col="{span:24}">
         <a-input-group compact v-for="(pm, index) in inbound.settings.portMap">
-            <a-input style="width: 50%" v-model.trim="pm.name" placeholder='{{ i18n "pages.inbounds.port"}}'>
+            <a-input style="width: 50%" v-model.trim="pm.name" placeholder='{{ i18n "pages.inbounds.port"}}' aria-label='{{ i18n "pages.inbounds.port"}}'>
                 <template slot="addonBefore" style="margin: 0;">[[ index+1 ]]</template>
             </a-input>
-            <a-input style="width: 50%" v-model.trim="pm.value" placeholder='{{ i18n "pages.inbounds.targetAddress" }}'>
+            <a-input style="width: 50%" v-model.trim="pm.value" placeholder='{{ i18n "pages.inbounds.targetAddress" }}' aria-label='{{ i18n "pages.inbounds.targetAddress" }}'>
                 <a-button slot="addonAfter" size="small" @click="inbound.settings.portMap.splice(index,1)">-</a-button>
             </a-input>
         </a-input-group>
@@ -27,7 +27,7 @@
         </a-select>
     </a-form-item>           
     <a-form-item label='Follow Redirect'>
-        <a-switch v-model="inbound.settings.followRedirect"></a-switch>
+        <a-switch v-model="inbound.settings.followRedirect" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
 </a-form>
 <!-- sockopt -->

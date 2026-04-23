@@ -7,7 +7,7 @@
             <a-tab-pane key="token" tab='{{ i18n "pages.xray.outbound.accessToken" }}'>
                 <a-form :colon="false" :label-col="{ md: {span:6} }" :wrapper-col="{ md: {span:18} }" :style="{ marginTop: '20px' }">
                     <a-form-item label='{{ i18n "pages.xray.outbound.accessToken" }}'>
-                        <a-input v-model="nordModal.token" placeholder='{{ i18n "pages.xray.outbound.accessToken" }}'></a-input>
+                        <a-input v-model="nordModal.token" placeholder='{{ i18n "pages.xray.outbound.accessToken" }}' aria-label='{{ i18n "pages.xray.outbound.accessToken" }}'></a-input>
                         <div :style="{ marginTop: '10px' }">
                             <a-button type="primary" icon="login" @click="login()" :loading="nordModal.confirmLoading">{{ i18n "login" }}</a-button>
                         </div>
@@ -17,7 +17,7 @@
             <a-tab-pane key="key" tab='{{ i18n "pages.xray.outbound.privateKey" }}'>
                 <a-form :colon="false" :label-col="{ md: {span:6} }" :wrapper-col="{ md: {span:18} }" :style="{ marginTop: '20px' }">
                     <a-form-item label='{{ i18n "pages.xray.outbound.privateKey" }}'>
-                        <a-input v-model="nordModal.manualKey" placeholder='{{ i18n "pages.xray.outbound.privateKey" }}'></a-input>
+                        <a-input v-model="nordModal.manualKey" placeholder='{{ i18n "pages.xray.outbound.privateKey" }}' aria-label='{{ i18n "pages.xray.outbound.privateKey" }}'></a-input>
                         <div :style="{ marginTop: '10px' }">
                             <a-button type="primary" icon="save" @click="saveKey()" :loading="nordModal.confirmLoading">{{ i18n "save" }}</a-button>
                         </div>

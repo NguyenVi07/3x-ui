@@ -62,13 +62,13 @@
       </a-select>
     </a-form-item>
     <a-form-item label="Reject Unknown SNI">
-      <a-switch v-model="inbound.stream.tls.rejectUnknownSni"></a-switch>
+      <a-switch v-model="inbound.stream.tls.rejectUnknownSni" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="Disable System Root">
-      <a-switch v-model="inbound.stream.tls.disableSystemRoot"></a-switch>
+      <a-switch v-model="inbound.stream.tls.disableSystemRoot" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-form-item label="Session Resumption">
-      <a-switch v-model="inbound.stream.tls.enableSessionResumption"></a-switch>
+      <a-switch v-model="inbound.stream.tls.enableSessionResumption" aria-label='{{ i18n "status" }}'></a-switch>
     </a-form-item>
     <a-divider :style="{ margin: '3px 0' }"></a-divider>
     <template v-for="cert,index in inbound.stream.tls.certs">
@@ -85,7 +85,7 @@
       </a-form-item>
       <a-form-item label=" ">
         <a-space>
-          <a-button icon="plus" v-if="index === 0" type="primary" size="small"
+          <a-button icon="plus" aria-label='{{ i18n "create" }}' v-if="index === 0" type="primary" size="small"
             @click="inbound.stream.tls.addCert()"></a-button>
           <a-button icon="minus" v-if="inbound.stream.tls.certs.length>1"
             type="primary" size="small"
@@ -114,7 +114,7 @@
         </a-form-item>
       </template>
       <a-form-item label="One Time Loading">
-        <a-switch v-model="cert.oneTimeLoading"></a-switch>
+        <a-switch v-model="cert.oneTimeLoading" aria-label='{{ i18n "status" }}'></a-switch>
       </a-form-item>
       <a-form-item label='Usage Option'>
         <a-select v-model="cert.usage" :style="{ width: '50%' }"
@@ -124,7 +124,7 @@
         </a-select>
       </a-form-item>
       <a-form-item label="Build Chain" v-if="cert.usage === 'issue'">
-        <a-switch v-model="cert.buildChain"></a-switch>
+        <a-switch v-model="cert.buildChain" aria-label='{{ i18n "status" }}'></a-switch>
       </a-form-item>
     </template>
     <a-form-item label='ECH key'>

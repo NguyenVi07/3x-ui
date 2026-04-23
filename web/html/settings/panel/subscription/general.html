@@ -6,7 +6,7 @@
             <template #description>{{ i18n
                 "pages.settings.subEnableDesc"}}</template>
             <template #control>
-                <a-switch v-model="allSetting.subEnable"></a-switch>
+                <a-switch v-model="allSetting.subEnable" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -14,7 +14,7 @@
             <template #description>{{ i18n
                 "pages.settings.subJsonEnable"}}</template>
             <template #control>
-                <a-switch v-model="allSetting.subJsonEnable"></a-switch>
+                <a-switch v-model="allSetting.subJsonEnable" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -22,7 +22,7 @@
             <template #description>Enable direct Clash and Mihomo YAML
                 subscriptions.</template>
             <template #control>
-                <a-switch v-model="allSetting.subClashEnable"></a-switch>
+                <a-switch v-model="allSetting.subClashEnable" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -68,7 +68,7 @@
                 "pages.settings.subURIDesc"}}</template>
             <template #control>
                 <a-input type="text"
-                    placeholder="(http|https)://domain[:port]/path/"
+                    placeholder="(http|https)://domain[:port]/path/" aria-label="(http|https)://domain[:port]/path/"
                     v-model="allSetting.subURI"></a-input>
             </template>
         </a-setting-list-item>
@@ -79,7 +79,7 @@
             <template #description>{{ i18n
                 "pages.settings.subEncryptDesc"}}</template>
             <template #control>
-                <a-switch v-model="allSetting.subEncrypt"></a-switch>
+                <a-switch v-model="allSetting.subEncrypt" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -87,7 +87,7 @@
             <template #description>{{ i18n
                 "pages.settings.subShowInfoDesc"}}</template>
             <template #control>
-                <a-switch v-model="allSetting.subShowInfo"></a-switch>
+                <a-switch v-model="allSetting.subShowInfo" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-divider>{{ i18n "pages.xray.basicTemplate"}}</a-divider>
@@ -105,7 +105,7 @@
                 "pages.settings.subSupportUrlDesc"}}</template>
             <template #control>
                 <a-input type="text" v-model="allSetting.subSupportUrl"
-                    placeholder="https://example.com"></a-input>
+                    placeholder="https://example.com" aria-label="https://example.com"></a-input>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -114,7 +114,7 @@
                 "pages.settings.subProfileUrlDesc"}}</template>
             <template #control>
                 <a-input type="text" v-model="allSetting.subProfileUrl"
-                    placeholder="https://example.com"></a-input>
+                    placeholder="https://example.com" aria-label="https://example.com"></a-input>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -132,7 +132,7 @@
             <template #description>{{ i18n
                 "pages.settings.subEnableRoutingDesc"}}</template>
             <template #control>
-                <a-switch v-model="allSetting.subEnableRouting"></a-switch>
+                <a-switch v-model="allSetting.subEnableRouting" aria-label='{{ i18n "status" }}'></a-switch>
             </template>
         </a-setting-list-item>
         <a-setting-list-item paddings="small">
@@ -142,7 +142,7 @@
                 "pages.settings.subRoutingRulesDesc"}}</template>
             <template #control>
                 <a-textarea v-model="allSetting.subRoutingRules"
-                    placeholder="happ://routing/add/..."></a-textarea>
+                    placeholder="happ://routing/add/..." aria-label="happ://routing/add/..."></a-textarea>
             </template>
         </a-setting-list-item>
     </a-collapse-panel>

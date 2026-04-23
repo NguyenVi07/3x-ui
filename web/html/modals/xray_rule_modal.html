@@ -9,7 +9,7 @@
           </template> Source IPs <a-icon type="question-circle"></a-icon>
         </a-tooltip>
       </template>
-      <a-input v-model.trim="ruleModal.rule.sourceIP" placeholder="e.g. 0.0.0.0/8, fc00::/7, geoip:ir"></a-input>
+      <a-input v-model.trim="ruleModal.rule.sourceIP" placeholder="e.g. 0.0.0.0/8, fc00::/7, geoip:ir" aria-label="e.g. 0.0.0.0/8, fc00::/7, geoip:ir"></a-input>
     </a-form-item>
     <a-form-item>
       <template slot="label">
@@ -19,7 +19,7 @@
           </template> Source Port <a-icon type="question-circle"></a-icon>
         </a-tooltip>
       </template>
-      <a-input v-model.trim="ruleModal.rule.sourcePort" placeholder="e.g. 53,443,1000-2000"></a-input>
+      <a-input v-model.trim="ruleModal.rule.sourcePort" placeholder="e.g. 53,443,1000-2000" aria-label="e.g. 53,443,1000-2000"></a-input>
     </a-form-item>
     <a-form-item>
       <template slot="label">
@@ -29,7 +29,7 @@
           </template> VLESS Route <a-icon type="question-circle"></a-icon>
         </a-tooltip>
       </template>
-      <a-input v-model.trim="ruleModal.rule.vlessRoute" placeholder="e.g. 53,443,1000-2000"></a-input>
+      <a-input v-model.trim="ruleModal.rule.vlessRoute" placeholder="e.g. 53,443,1000-2000" aria-label="e.g. 53,443,1000-2000"></a-input>
     </a-form-item>
     <a-form-item label='Network'>
       <a-select v-model="ruleModal.rule.network" :dropdown-class-name="themeSwitcher.currentTheme">
@@ -42,15 +42,15 @@
       </a-select>
     </a-form-item>
     <a-form-item label='Attributes'>
-      <a-button icon="plus" size="small" :style="{ marginLeft: '10px' }" @click="ruleModal.rule.attrs.push(['', ''])"></a-button>
+      <a-button icon="plus" aria-label='{{ i18n "create" }}' size="small" :style="{ marginLeft: '10px' }" @click="ruleModal.rule.attrs.push(['', ''])"></a-button>
     </a-form-item>
     <a-form-item :wrapper-col="{span: 24}">
       <a-input-group compact v-for="(attr,index) in ruleModal.rule.attrs">
-        <a-input :style="{ width: '50%' }" v-model="attr[0]" placeholder='{{ i18n "pages.inbounds.stream.general.name" }}'>
+        <a-input :style="{ width: '50%' }" v-model="attr[0]" placeholder='{{ i18n "pages.inbounds.stream.general.name" }}' aria-label='{{ i18n "pages.inbounds.stream.general.name" }}'>
           <template slot="addonBefore" :style="{ margin: '0' }">[[ index+1 ]]</template>
         </a-input>
-        <a-input :style="{ width: '50%' }" v-model="attr[1]" placeholder='{{ i18n "pages.inbounds.stream.general.value" }}'>
-          <a-button icon="minus" slot="addonAfter" size="small" @click="ruleModal.rule.attrs.splice(index,1)"></a-button>
+        <a-input :style="{ width: '50%' }" v-model="attr[1]" placeholder='{{ i18n "pages.inbounds.stream.general.value" }}' aria-label='{{ i18n "pages.inbounds.stream.general.value" }}'>
+          <a-button icon="minus" aria-label='{{ i18n "delete" }}' slot="addonAfter" size="small" @click="ruleModal.rule.attrs.splice(index,1)"></a-button>
         </a-input>
       </a-input-group>
     </a-form-item>
@@ -62,7 +62,7 @@
           </template> IP <a-icon type="question-circle"></a-icon>
         </a-tooltip>
       </template>
-      <a-input v-model.trim="ruleModal.rule.ip" placeholder="e.g. 0.0.0.0/8, fc00::/7, geoip:ir"></a-input>
+      <a-input v-model.trim="ruleModal.rule.ip" placeholder="e.g. 0.0.0.0/8, fc00::/7, geoip:ir" aria-label="e.g. 0.0.0.0/8, fc00::/7, geoip:ir"></a-input>
     </a-form-item>
     <a-form-item>
       <template slot="label">
@@ -72,7 +72,7 @@
           </template> Domain <a-icon type="question-circle"></a-icon>
         </a-tooltip>
       </template>
-      <a-input v-model.trim="ruleModal.rule.domain" placeholder="e.g. google.com, geosite:cn"></a-input>
+      <a-input v-model.trim="ruleModal.rule.domain" placeholder="e.g. google.com, geosite:cn" aria-label="e.g. google.com, geosite:cn"></a-input>
     </a-form-item>
     <a-form-item>
       <template slot="label">
@@ -82,7 +82,7 @@
           </template> User <a-icon type="question-circle"></a-icon>
         </a-tooltip>
       </template>
-      <a-input v-model.trim="ruleModal.rule.user" placeholder="e.g. email address"></a-input>
+      <a-input v-model.trim="ruleModal.rule.user" placeholder="e.g. email address" aria-label="e.g. email address"></a-input>
     </a-form-item>
     <a-form-item>
       <template slot="label">
@@ -92,7 +92,7 @@
           </template> Port <a-icon type="question-circle"></a-icon>
         </a-tooltip>
       </template>
-      <a-input v-model.trim="ruleModal.rule.port" placeholder="e.g. 53,443,1000-2000"></a-input>
+      <a-input v-model.trim="ruleModal.rule.port" placeholder="e.g. 53,443,1000-2000" aria-label="e.g. 53,443,1000-2000"></a-input>
     </a-form-item>
     <a-form-item label='Inbound Tags'>
       <a-select v-model="ruleModal.rule.inboundTag" mode="multiple" :dropdown-class-name="themeSwitcher.currentTheme">

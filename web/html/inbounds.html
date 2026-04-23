@@ -171,14 +171,14 @@
                 </template>
                 <template #extra>
                   <a-button-group>
-                    <a-button icon="sync" @click="manualRefresh"
+                    <a-button icon="sync" aria-label='{{ i18n "info" }}' @click="manualRefresh"
                       :loading="refreshing"></a-button>
                     <a-popover placement="bottomRight" trigger="click"
                       :overlay-class-name="themeSwitcher.currentTheme">
                       <template #title>
                         <div class="ant-custom-popover-title">
                           <a-switch v-model="isRefreshEnabled"
-                            @change="toggleRefresh" size="small"></a-switch>
+                            @change="toggleRefresh" size="small" aria-label='{{ i18n "status" }}'></a-switch>
                           <span>{{ i18n "pages.inbounds.autoRefresh" }}</span>
                         </div>
                       </template>
@@ -196,7 +196,7 @@
                           </a-select>
                         </a-space>
                       </template>
-                      <a-button icon="down"></a-button>
+                      <a-button icon="down" aria-label='{{ i18n "info" }}'></a-button>
                     </a-popover>
                   </a-button-group>
                 </template>
@@ -205,12 +205,12 @@
                     :style="isMobile ? {} : { display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }">
                     <a-switch v-model="enableFilter"
                       :style="isMobile ? { marginBottom: '.5rem', display: 'flex' } : { marginRight: '.5rem' }"
-                      @change="toggleFilter">
+                      @change="toggleFilter" aria-label='{{ i18n "status" }}'>
                       <a-icon slot="checkedChildren" type="search"></a-icon>
                       <a-icon slot="unCheckedChildren" type="filter"></a-icon>
                     </a-switch>
                     <a-input v-if="!enableFilter" v-model.lazy="searchKey"
-                      placeholder='{{ i18n "search" }}' autofocus
+                      placeholder='{{ i18n "search" }}' aria-label='{{ i18n "search" }}' autofocus
                       :style="{ maxWidth: '300px' }"
                       :size="isMobile ? 'small' : ''"></a-input>
                     <a-radio-group v-if="enableFilter" v-model="filterBy"
@@ -307,7 +307,7 @@
                           </a-menu-item>
                           <a-menu-item v-if="isMobile">
                             <a-switch size="small" v-model="dbInbound.enable"
-                              @change="switchEnable(dbInbound.id,dbInbound.enable)"></a-switch>
+                              @change="switchEnable(dbInbound.id,dbInbound.enable)" aria-label='{{ i18n "status" }}'></a-switch>
                             {{ i18n "pages.inbounds.enable" }}
                           </a-menu-item>
                         </a-menu>
@@ -478,7 +478,7 @@
                     </template>
                     <template slot="enable" slot-scope="text, dbInbound">
                       <a-switch v-model="dbInbound.enable"
-                        @change="switchEnable(dbInbound.id,dbInbound.enable)"></a-switch>
+                        @change="switchEnable(dbInbound.id,dbInbound.enable)" aria-label='{{ i18n "status" }}'></a-switch>
                     </template>
                     <template slot="expiryTime" slot-scope="text, dbInbound">
                       <a-popover v-if="dbInbound.expiryTime > 0"
