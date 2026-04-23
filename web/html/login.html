@@ -64,19 +64,19 @@
                     <a-form-item>
                       <a-input autocomplete="username" name="username" v-model.trim="user.username"
                         placeholder='{{ i18n "username" }}' aria-label='{{ i18n "username" }}' autofocus required>
-                        <a-icon slot="prefix" type="user" class="fs-1rem"></a-icon>
+                        <a-icon slot="prefix" type="user" class="fs-1rem" aria-hidden="true"></a-icon>
                       </a-input>
                     </a-form-item>
                     <a-form-item>
                       <a-input-password autocomplete="current-password" name="password" v-model.trim="user.password"
                         placeholder='{{ i18n "password" }}' aria-label='{{ i18n "password" }}' required>
-                        <a-icon slot="prefix" type="lock" class="fs-1rem"></a-icon>
+                        <a-icon slot="prefix" type="lock" class="fs-1rem" aria-hidden="true"></a-icon>
                       </a-input-password>
                     </a-form-item>
                     <a-form-item v-if="twoFactorEnable">
                       <a-input autocomplete="one-time-code" name="twoFactorCode" v-model.trim="user.twoFactorCode"
                         placeholder='{{ i18n "twoFactorCode" }}' aria-label='{{ i18n "twoFactorCode" }}' required>
-                        <a-icon slot="prefix" type="key" class="fs-1rem"></a-icon>
+                        <a-icon slot="prefix" type="key" class="fs-1rem" aria-hidden="true"></a-icon>
                       </a-input>
                     </a-form-item>
                     <a-form-item>
@@ -242,4 +242,6 @@
     pm_init();
   }
 </script>
+{{ template "page/body_end" .}}
+t>
 {{ template "page/body_end" .}}
